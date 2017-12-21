@@ -1,0 +1,19 @@
+{
+  "name": "rekognition",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ferryvanmaurik/rekognition.git"
+  },
+  "author": "Ferry van Maurik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ferryvanmaurik/rekognition/issues"
+  },
+  "homepage": "https://github.com/ferryvanmaurik/rekognition#readme"
+}
