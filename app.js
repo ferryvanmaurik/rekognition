@@ -5,6 +5,34 @@ var s3 = new AWS.S3();
 
 var rekognition = new AWS.Rekognition({apiVersion: '2016-06-27'});
 
+
+
+ var params = {
+  SourceImage: {
+   S3Object: {
+    Bucket: "rekognition-ferry", 
+    Name: "joost.jpg"
+   }
+  }, 
+  TargetImage: {
+   S3Object: {
+    Bucket: "rekognition-ferry", 
+    Name: "mark.jpg"
+   }
+  }
+ };
+
+console.log('Starting API request')
+
+ rekognition.compareFaces(params, function(err, data) {
+   if (err) console.log(err); // an error occurred
+   else     console.log(JSON.stringify(data, undefined, 2));           // successful response
+   
+ });
+
+ console.log('API request completed')
+
+
 // var params = {
 //   Image: {
 //    S3Object: {
@@ -25,22 +53,3 @@ var rekognition = new AWS.Rekognition({apiVersion: '2016-06-27'});
 //     else console.log(data.Labels);
 // });
 
- var params = {
-  SourceImage: {
-   S3Object: {
-    Bucket: "rekognition-ferry", 
-    Name: "ferry2.jpg"
-   }
-  }, 
-  TargetImage: {
-   S3Object: {
-    Bucket: "rekognition-ferry", 
-    Name: "ferry3.jpg"
-   }
-  }
- };
- rekognition.compareFaces(params, function(err, data) {
-   if (err) console.log(err); // an error occurred
-   else     console.log(data.FaceMatches[0].Similarity);           // successful response
-   
- });
